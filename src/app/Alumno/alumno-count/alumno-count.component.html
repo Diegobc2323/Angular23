@@ -1,11 +1,11 @@
 <div>
 
-  <input type="radio" name="opciones" id="total" value="total" checked (*ngModel)=globalElegido (change)="alCambiar()">
+  <input type="radio" name="opciones" id="total" value="total" checked [(ngModel)]='opcionElegida' (change)="alCambiar()">
   <span class="radioClass">Total: {{total}}</span>
 
-  <input type="radio" name="opciones" id="hombres" value="hombres" (*ngModel)=globalElegido  (change)="alCambiar()">
+  <input type="radio" name="opciones" id="hombres" value="Hombre" [(ngModel)]='opcionElegida'  (change)="alCambiar()">
   <span class="radioClass">Hombres: {{hombres}}</span>
 
-  <input type="radio" name="opciones" id="mujeres" value="mujeres" (*ngModel)=globalElegido  (change)="alCambiar()">
+  <input type="radio" name="opciones" id="mujeres" value="Mujer" [(ngModel)]='opcionElegida'  (change)="alCambiar()">
   <span class="radioClass">Mujeres: {{mujeres}}</span>
 </div>

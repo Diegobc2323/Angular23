@@ -27,6 +27,10 @@ export class AlumnoListaComponent implements OnInit{
     return this.alumnos.filter(alumno => alumno.sexo === 'Mujer').length;
   }
 
+  alPulsar(opcionElegida: string): void {
+    this.seleccion = opcionElegida;
+  }
+
   seleccion: string = 'total';
 
   constructor() {}

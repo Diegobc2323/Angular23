@@ -17,7 +17,7 @@ export class AlumnoCountComponent{
   @Input()
   total: number = 0;
 
-  opcionElegida: string = "total";
+  opcionElegida: string = "Hombre";
 
   @Output()
   globalElegido: EventEmitter<string> = new EventEmitter<string>();
@@ -26,7 +26,6 @@ export class AlumnoCountComponent{
 
   alCambiar(){
     this.globalElegido.emit(this.opcionElegida);
-    console.log("alumno-count.component.ts__opcionElegida: " + this.opcionElegida);
   }
 
 
