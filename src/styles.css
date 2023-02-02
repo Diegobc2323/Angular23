@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+.negrita{
+  font-weight: bold;
+}
+
+.italica{
+  font-style: italic;
+}
+
+.color{
+  color: red;
+}
