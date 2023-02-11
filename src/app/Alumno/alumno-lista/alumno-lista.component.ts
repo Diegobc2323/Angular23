@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Alumno } from '../IAlumno';
+import { AlumnoServiceService } from '../AlumnoService.service';
 
 @Component({
   selector: 'app-alumno-lista',
@@ -7,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlumnoListaComponent implements OnInit{
 
-  alumnos: any[] = [
-    {nombre: 'Perico', apellido: 'Palotes', direccion: 'Calle Falsa 123', fnac: '6/12/1965', sexo: 'Hombre'},
-    {nombre: 'Juana', apellido: 'Perez', direccion: 'Calle Falsa 123', fnac: '4/15/1965', sexo: 'Mujer'},
-    {nombre: 'María', apellido: 'Gomez', direccion: 'Calle Falsa 123', fnac: '1/30/1965', sexo: 'Mujer'},
-    {nombre: 'Julian', apellido: 'Gonzalez', direccion: 'Calle Falsa 123', fnac: '12/12/1965', sexo: 'Hombre'},
-  ]
+  seleccion: string = 'total';
+
+  alumnos: Alumno[];
+
+  constructor(service: AlumnoServiceService) {
+    this.alumnos = service.getAlumnos();
+  }
 
   //create a function that retourns the number of elements in the array
   totalAlumnos(): number {
@@ -30,10 +33,6 @@ export class AlumnoListaComponent implements OnInit{
   alPulsar(opcionElegida: string): void {
     this.seleccion = opcionElegida;
   }
-
-  seleccion: string = 'total';
-
-  constructor() {}
 
   ngOnInit() {
 

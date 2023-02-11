@@ -17,7 +17,7 @@ export class AlumnoCountComponent{
   @Input()
   total: number = 0;
 
-  opcionElegida: string = "Hombre";
+  opcionElegida: string = "total";
 
   @Output()
   globalElegido: EventEmitter<string> = new EventEmitter<string>();
