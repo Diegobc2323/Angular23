@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Alumno } from './IAlumno';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlumnoServiceService {
 
-constructor() { }
+  constructor(public _http: HttpClient) { }
 
-getAlumnos(): Alumno[] {
-    return [{nombre: 'Perico', apellido: 'Palotes', direccion: 'Calle Falsa 123', fnac: '6/12/1965', sexo: 'Hombre'},
-    {nombre: 'Juana', apellido: 'Perez', direccion: 'Calle Falsa 123', fnac: '4/15/1965', sexo: 'Mujer'},
-    {nombre: 'María', apellido: 'Gomez', direccion: 'Calle Falsa 123', fnac: '1/30/1965', sexo: 'Mujer'},
-    {nombre: 'Julian', apellido: 'Gonzalez', direccion: 'Calle Falsa 123', fnac: '12/12/1965', sexo: 'Hombre'},]
+  getAlumnos(): Observable<Alumno[]> {
+    return this._http.get<Alumno[]>('https://localhost:44393/api/Alumno');
   }
 }
 

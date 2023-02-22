@@ -13,9 +13,13 @@ export class AlumnoListaComponent implements OnInit{
 
   alumnos: Alumno[];
 
-  constructor(service: AlumnoServiceService) {
-    this.alumnos = service.getAlumnos();
+  constructor(private service: AlumnoServiceService) {
+    this.alumnos = [];
   }
+
+  ngOnInit() {
+    this.service.getAlumnos().subscribe((datosAlumnos) => this.alumnos = datosAlumnos);
+   }
 
   //create a function that retourns the number of elements in the array
   totalAlumnos(): number {
@@ -34,7 +38,5 @@ export class AlumnoListaComponent implements OnInit{
     this.seleccion = opcionElegida;
   }
 
-  ngOnInit() {
 
-  }
 }

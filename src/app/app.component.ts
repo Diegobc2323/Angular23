@@ -16,6 +16,7 @@ import { Component } from '@angular/core';
     </div> -->
     <!-- <app-Alumno> -->
     <app-alumno-lista></app-alumno-lista>
+    <app-Profesor></app-Profesor>
   `,
   styleUrls: ['./app.component.css'],
 })
