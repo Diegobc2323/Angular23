@@ -15,9 +15,16 @@ import { Component } from '@angular/core';
       <img src="./assets/mex.png" alt="" height="100vh" *ngIf="visible">
     </div> -->
     <!-- <app-Alumno> -->
-    <app-alumno-lista></app-alumno-lista>
-    <app-Profesor></app-Profesor>
+      <div class="p-5">
+        <ul class="nav nav-tabs">
+          <li class="nav-item"><a href="alumno" class="nav-link">Alumnos</a></li>
+          <li class="nav-item"><a href="profesor" class="nav-link">Profesores</a></li>
+        </ul>
+        <router-outlet></router-outlet>
+      </div>
   `,
+
+
   styleUrls: ['./app.component.css'],
 })
 

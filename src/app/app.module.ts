@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Routes, RouterModule } from '@angular/router';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,12 @@ import { AlumnoTituloPipe } from './Alumno/alumno-lista/alumnoTitulo.pipe';
 import { AlumnoCountComponent } from './Alumno/alumno-count/alumno-count.component';
 import { ProfesorComponent } from './Profesor/Profesor.component';
 
+const appRutas: Routes = [
+  { path: 'alumno', component: AlumnoListaComponent },
+  { path: 'profesor', component: ProfesorComponent },
+  { path: 'alumno/:id', component: AlumnoComponent},
+  { path: '', redirectTo: '/alumno', pathMatch: 'full' }
+];
 
 @NgModule({
   declarations: [
@@ -25,7 +33,8 @@ import { ProfesorComponent } from './Profesor/Profesor.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRutas)
   ],
   providers: [],
   bootstrap: [AppComponent]

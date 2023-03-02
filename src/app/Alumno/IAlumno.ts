@@ -1,4 +1,5 @@
 export interface IAlumno {
+  id: number;
   nombre: string;
   apellido: string;
   direccion: string;
@@ -11,11 +12,11 @@ export interface IAlumno {
 export class Alumno implements IAlumno {
 
   constructor(
+    public id : number,
     public nombre: string,
     public apellido: string,
     public direccion: string,
     public fnac: string,
     public sexo: string,
   ) {}
-
 }

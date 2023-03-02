@@ -1,24 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AlumnoServiceService } from './AlumnoService.service';
+import { Alumno } from './IAlumno';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-Alumno',
   templateUrl: './Alumno.component.html',
-  styleUrls: ['./Alumno.component.css']
+  styleUrls: ['./Alumno.component.css'],
+
 })
 export class AlumnoComponent implements OnInit {
-  columnas: number = 4
-  nombre: string = 'Perico';
-  apellido: string = 'Palotes';
-  direccion: string = 'Calle Falsa 123';
-  edad: number = 18;
+
+  alumno: Alumno;
+
+  constructor(private alumnoService: AlumnoServiceService, private activatedRoute : ActivatedRoute) {
+    this.alumno = new Alumno(1,"","","","","")
+  }
   visibles : boolean = true;
-  constructor() { }
 
   ngOnInit() {
+    let id = this.activatedRoute.snapshot.params['id'];
+    this.alumnoService.getAlumno(id).subscribe((datosAlumno)=> this.alumno = datosAlumno) //Aqui cargamos ya el alumno con los datos
   }
 
-  alternarVisibles(): void {
-    this.visibles = !this.visibles;
-  }
+
 
 }
