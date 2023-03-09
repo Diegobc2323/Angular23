@@ -17,8 +17,15 @@ import { Component } from '@angular/core';
     <!-- <app-Alumno> -->
       <div class="p-5">
         <ul class="nav nav-tabs">
-          <li class="nav-item"><a href="alumno" class="nav-link">Alumnos</a></li>
-          <li class="nav-item"><a href="profesor" class="nav-link">Profesores</a></li>
+          <li class="nav-item">
+            <a routerLink="alumno" class="nav-link">Alumnos</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="profesor" class="nav-link">Profesores</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="carrera" class="nav-link">Carreras</a>
+          </li>
         </ul>
         <router-outlet></router-outlet>
       </div>

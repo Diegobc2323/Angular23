@@ -2,7 +2,7 @@ export interface IProfesor {
   nombre: string;
   apellido: string;
   fingreso: string;
-  titulacion: string;
+  carreraID: number;
 
 }
 
@@ -12,7 +12,7 @@ export class Profesor implements IProfesor {
     public nombre: string,
     public apellido: string,
     public fingreso: string,
-    public titulacion: string
+    public carreraID: number
   ) {}
 
 }
