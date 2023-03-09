@@ -13,10 +13,12 @@ import { AlumnoTituloPipe } from './Alumno/alumno-lista/alumnoTitulo.pipe';
 import { AlumnoCountComponent } from './Alumno/alumno-count/alumno-count.component';
 import { ProfesorComponent } from './Profesor/Profesor.component';
 import { CarreraComponent } from './Carrera/Carrera.component';
+import { ProfesoresCarrerasComponent } from './Profesor/ProfesoresCarreras/ProfesoresCarreras.component';
 
 const appRutas: Routes = [
   { path: 'alumno', component: AlumnoListaComponent },
   { path: 'profesor', component: ProfesorComponent },
+  { path: 'profesor/:carreraID', component: ProfesoresCarrerasComponent },
   { path: 'alumno/:id', component: AlumnoComponent},
   { path: '', redirectTo: '/alumno', pathMatch: 'full' },
   { path: 'carrera', component: CarreraComponent }
@@ -30,7 +32,8 @@ const appRutas: Routes = [
     AlumnoTituloPipe,
     AlumnoCountComponent,
     ProfesorComponent,
-      CarreraComponent
+    CarreraComponent,
+    ProfesoresCarrerasComponent
    ],
   imports: [
     BrowserModule,

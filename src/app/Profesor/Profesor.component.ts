@@ -22,6 +22,6 @@ export class ProfesorComponent implements OnInit {
   ngOnInit() {
     this.service.getProfesores().subscribe((datosProfesores) => this.profesores = datosProfesores);
     this.carreraService.getCarreras().subscribe((datosCarreras) => this.carreras = datosCarreras);
-  }
+   }
 
 }

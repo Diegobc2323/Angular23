@@ -1,0 +1,17 @@
+<br><br>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Fecha de Ingreso</th>
+    </tr>
+    <ng-container *ngFor='let profesor of profesores'>
+      <tr>
+        <td>{{profesor.nombre}}</td>
+        <td>{{profesor.apellido}}</td>
+        <td>{{profesor.fingreso}}</td>
+      </tr>
+    </ng-container>
+  </thead>
+</table>
