@@ -6,7 +6,9 @@
     </tr>
     <ng-container *ngFor='let carrera of carreras'>
       <tr>
-        <td><a [routerLink]="['/profesor', carrera.id]">{{carrera.titulo}}</a></td>
+        <td>
+          <a [routerLink]="['/profesor', carrera.id]">{{carrera.titulo}}</a>
+        </td>
       </tr>
     </ng-container>
   </thead>

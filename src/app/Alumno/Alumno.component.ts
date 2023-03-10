@@ -14,7 +14,7 @@ export class AlumnoComponent implements OnInit {
   alumno: Alumno;
 
   constructor(private alumnoService: AlumnoServiceService, private activatedRoute : ActivatedRoute) {
-    this.alumno = new Alumno(1,"","","","","")
+    this.alumno = new Alumno(1,"","","","","",0)
   }
   visibles : boolean = true;
 

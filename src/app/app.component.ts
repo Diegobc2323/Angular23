@@ -26,6 +26,9 @@ import { Component } from '@angular/core';
           <li class="nav-item">
             <a routerLink="carrera" class="nav-link">Carreras</a>
           </li>
+          <li class="nav-item">
+            <a routerLink="curso" class="nav-link">Cursos</a>
+          </li>
         </ul>
         <router-outlet></router-outlet>
       </div>

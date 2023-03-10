@@ -5,7 +5,7 @@ export interface IAlumno {
   direccion: string;
   fnac: string;
   sexo: string;
-  nom_padre?: string;
+  cursoID: number;
 
 }
 
@@ -18,5 +18,6 @@ export class Alumno implements IAlumno {
     public direccion: string,
     public fnac: string,
     public sexo: string,
+    public cursoID: number,
   ) {}
 }
